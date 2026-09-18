@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int n, w, i;
+
+    printf("Enter number of frames: ");
+    scanf("%d", &n);
+
+    printf("Enter window size: ");
+    scanf("%d", &w);
+
+    for(i = 1; i <= n; i++) {
+        printf("Sending frame %d\n", i);
+
+        if(i % w == 0)
+            printf("Acknowledgement received\n");
+    }
+
+    printf("All frames sent successfully");
+
+    return 0;
+}
