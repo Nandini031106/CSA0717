@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+
+int main() {
+    char host[50];
+    struct hostent *h;
+
+    printf("Enter hostname: ");
+    scanf("%s", host);
+
+    h = gethostbyname(host);
+
+    if (h == NULL)
+        printf("Host not found\n");
+    else
+        printf("IP Address: %s\n",
+               inet_ntoa(*(struct in_addr*)h->h_addr));
+
+    return 0;
+}
