@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    char a[100], b[200];
+    int i, j = 0, count = 0;
+
+    printf("Enter bits: ");
+    scanf("%s", a);
+
+    for(i = 0; a[i] != '\0'; i++) {
+        b[j++] = a[i];
+
+        if(a[i] == '1')
+            count++;
+        else
+            count = 0;
+
+        if(count == 5) {
+            b[j++] = '0';
+            count = 0;
+        }
+    }
+
+    b[j] = '\0';
+
+    printf("After Bit Stuffing: %s", b);
+
+    return 0;
+}
